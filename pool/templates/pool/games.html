@@ -1,0 +1,23 @@
+{% extends 'pool/base.html' %}
+{% block content %}
+    <div class="jumbotron text-center">
+        <h1>Week 14 Playoff Games</h1>
+        <p>Week 14 of the NFL Regular Season</p>
+    </div>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <tr>
+                <td><h3>Home Team</h3></td>
+                <td><h3>@</h3></td>
+                <td><h3>Away Team</h3></td>
+                <td><h3>Line</h3></td>
+            </tr>
+            {% for game in game.all %}
+                <td><p>{{ game.home_team }}</p></td>
+                <td></td>
+                <td><p>{{ game.away_team }}</p></td>
+                <td><p>{{ game.line }}</p></td>
+            {% endfor %}
+        </table>
+    </div>
+{% endblock %}
